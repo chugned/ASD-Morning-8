@@ -1,0 +1,3 @@
+Hello this is ok	I am a note yaay
+Hello i am a tagged note	i am special ok?{{NEWLINE}}	tag
+	
