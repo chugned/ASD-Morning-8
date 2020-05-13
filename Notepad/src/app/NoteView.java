@@ -1,6 +1,9 @@
 package app;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -32,7 +35,7 @@ import java.util.logging.Logger;
  */
 public class NoteView {
         List<Note> notes;
-
+        public static final ObservableList notes_list = FXCollections.observableArrayList();
         private VBox allNotesBox = new VBox(20);
         private Stage primaryStage;
 
@@ -119,6 +122,14 @@ public class NoteView {
          * This method will go over each note and make VBox for it and add it to the allNotesBox
          * Each note registers actions for edit/delete
          */
+
+        private void functionFoSortingNotes() {
+                for (Note note : this.notes) {
+                        if(note.title != )
+                }
+
+        }
+
         private void drawNotes() {
                 this.allNotesBox.getChildren().clear();
                 // Container box in which each note will be rendered
@@ -163,7 +174,6 @@ public class NoteView {
 
                                 tagsBox.getChildren().add(label);
                         });
-
 
                         VBox noteBox = new VBox(0, noteHeader, contentText, tagsBox, new Separator());
                         noteBox.setSpacing(10);
@@ -382,10 +392,7 @@ public class NoteView {
                 tagTextField.requestFocus();
         }
 
-        private void sortByTag()
-        {
 
-        }
         private boolean checkIfTagHasIllegalCharacters(TextField tagTextField) {
                 if (
                         tagTextField.getText().contains(System.getProperty("line.separator")) ||
